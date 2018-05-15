@@ -1,3 +1,6 @@
+const dotenv = require('dotenv')
+dotenv.config()
+
 const express = require('express')
 const mysql = require('mysql')
 const app = express()
@@ -6,7 +9,7 @@ const connection = mysql.createConnection({
     //connection props
     host:process.env.HOST,
     user:process.env.USERNAME,
-    password:process.env.PASSWORD,
+    password:process.env.PSWD,
     database: process.env.DATABASE
 });
 
