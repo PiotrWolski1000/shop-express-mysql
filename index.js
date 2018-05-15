@@ -4,10 +4,10 @@ const app = express()
 
 const connection = mysql.createConnection({
     //connection props
-    host:'localhost',
-    user:'piotrek',
-    password:'piotrek123',
-    database: 'mojaBaza'
+    host:process.env.HOST,
+    user:process.env.USERNAME,
+    password:process.env.PASSWORD,
+    database: process.env.DATABASE
 });
 
 
@@ -54,4 +54,4 @@ function authorize(req, res, next) {
     }
 }
 
-app.listen(3011)
+app.listen(process.env.PORT)
