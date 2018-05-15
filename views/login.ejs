@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+    html, body, form {
+        height: 100%;
+        background-color:darkcyan;
+        overflow: hidden;
+    }
+
+    form {
+        display         : flex;
+        justify-content : center;
+        align-items     : center;        
+    }
+
+    #login {
+        text-align: center;
+        background-color:whitesmoke;
+        border-radius: 25px;
+        padding          : 20px;
+    }
+
+    #login > span {
+        text-transform: uppercase;
+        color: grey;
+        display: block;
+        padding:0px 0px 10px 10px;
+    }
+
+    #login div {
+        overflow : auto;
+    }
+
+    #login input {
+        
+        display: block;
+        padding: 10px;
+        margin: 5px;
+    }
+
+    button {
+        clear : both;
+    }
+   
+    .message {
+        color : red;
+    }
+
+    button {
+        margin: 10px auto;
+        display: block;
+        padding: 10px;
+    }
+    </style>
+</head>
+<body>
+    <form method="POST">
+    <div id='login'>
+            <span>
+                Logowanie
+            </span>
+        </span>
+        <div>
+        <input type='text' name='name' placeholder="Username" />
+        </div>
+        <div>
+        <input type='password' name='message' placeholder="Password"/>
+        </div>
+        <div>
+            <button id="send">Zaloguj</button>
+        </div>
+        <% if ( locals.message ) { %>
+            <div class='message'>
+                <%= locals.message %>
+            </div>
+        <% } %>
+    </div>
+    </form>
+</body>
+</html>
